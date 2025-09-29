@@ -1,0 +1,31 @@
+import React from "react";
+import BoxTitle from "@/components/elements/BoxTitle";
+
+function Skills() {
+  const dataSkills = [
+    { name: "HTML", level: "Advanced" },
+    { name: "CSS", level: "Advanced" },
+    { name: "JavaScript", level: "Advanced" },
+    { name: "React.js", level: "Advanced" },
+    { name: "Next.js", level: "Intermediate" },
+    { name: "Tailwind CSS", level: "Intermediate" },
+    { name: "TypeScript", level: "Intermediate" },
+    { name: "Git", level: "Intermediate" },
+    { name: "Figma", level: "Basic" },
+  ];
+
+  return (
+    <section className="flex flex-col w-full h-[500px] mx-auto relative bg-[#bdbdbd] border-b-4 border-[#483f3b] overflow-hidden" id="skills">
+      <BoxTitle title="My Toolkit" position="right" />
+      <div className="max-w-4xl flex flex-wrap gap-4 m-auto justify-center items-center px-6">
+      {
+        dataSkills.map((skill, index) => (
+          <div key={index} className="flex w-36 h-14 p-2 justify-center items-center bg-white rounded-full text-lg">{skill.name}</div>
+        ))
+      }
+      </div>
+    </section>
+  );
+} 
+
+export default Skills;

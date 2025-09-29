@@ -1,7 +1,9 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import Hero from "../components/hero";
-import About from "../components/about";
+import Navbar from "@/components/elements/Navbar";
+import Hero from "@/components/hero";
+import About from "@/components/about";
+import Skills from "@/components/skills";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <main className="flex flex-col">
         <Hero />
         <About />
+        <Skills />
+        <Projects />
       </main>
     </div>
   );

@@ -1,0 +1,55 @@
+.left-title {
+  width: 600px;
+  height: 0;
+  border-right: 80px solid transparent;
+  border-top: 80px solid #483f3b;
+  position: relative;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.left-title h3 {
+  width: 200px;
+  position: absolute;
+  top: -70px;
+  left: 40px;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+}
+
+.right-title {
+  width: 600px;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-top: 80px solid #483f3b;
+  position: relative;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.right-title h3 {
+  width: 200px;
+  position: absolute;
+  top: -70px;
+  right: 40px;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  text-align: right;
+}
+
+.hexagon {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  background: #483f3b;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  margin-top: 40px;
+}
+
+.hexagon::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: white;
+  clip-path: inherit;
+}
