@@ -1,16 +1,27 @@
 import React from "react";
 import Link from "next/link";
+import { Menu } from "lucide-react";
 
-function Navbar() {
+export interface NavbarProps {
+  setOpenSidebar: (open: boolean) => void;
+}
+
+function Navbar({  setOpenSidebar }: NavbarProps) {
   return (
-    <nav className="flex w-[600px] h-16 mx-auto justify-center items-center px-6 bg-[#352d26] border-2 border-white rounded-4xl">
-      <ul className="flex w-full h-full gap-8 justify-center items-center text-white font-semibold">
-        <Link className="hover:text-gray-300 cursor-pointer" href={'/'}>Home</Link>
-        <Link className="hover:text-gray-300 cursor-pointer" href={'#about'}>About</Link>
-        <Link className="hover:text-gray-300 cursor-pointer" href={'#skills'}>Skills</Link>
-        <Link className="hover:text-gray-300 cursor-pointer" href={'#projects'}>Project</Link>
+    <nav className="flex w-full md:w-[600px] h-16 mx-auto justify-end md:justify-center items-center px-6 bg-[#352d26] border-b-2 md:border-2 border-white md:rounded-4xl">
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex w-full h-full gap-8 justify-center items-center text-white font-semibold">
+        <li className="hover:text-gray-300 cursor-pointer"><Link href={'/'}>Home</Link></li>
+        <li className="hover:text-gray-300 cursor-pointer"><Link href={'#about'}>About</Link></li>
+        <li className="hover:text-gray-300 cursor-pointer"><Link href={'#projects'}>Project</Link></li>
         <li className="hover:text-gray-300 cursor-pointer">Contact</li>
       </ul>
+
+      {/* Mobile Menu */}
+      <div className="flex w-full justify-between items-center md:hidden">
+        <p className="text-white text-2xl font-bold">YMP</p>
+        <Menu color="#FFFFFF" size={40} onClick={() => setOpenSidebar(true)}/>
+      </div>
     </nav>
   );
 }
