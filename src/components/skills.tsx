@@ -1,5 +1,5 @@
 import React from "react";
-import BoxTitle from "@/components/elements/BoxTitle";
+import BoxTitle from "./elements/BoxTitle";
 
 function Skills() {
   const dataSkills = [
@@ -16,7 +16,7 @@ function Skills() {
 
   return (
     <section className="flex flex-col w-full h-[500px] mx-auto relative bg-[#bdbdbd] border-b-4 border-[#483f3b] overflow-hidden" id="skills">
-      <BoxTitle title="My Toolkit" position="right" />
+      <BoxTitle title="Skill & Tools" position="right" />
       <div className="max-w-4xl flex flex-wrap gap-4 m-auto justify-center items-center px-6">
       {
         dataSkills.map((skill, index) => (

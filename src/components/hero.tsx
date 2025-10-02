@@ -19,27 +19,25 @@ function Hero() {
   }, [displayText]);
   
   return (
-    <section className="flex w-full h-screen min-h-[640px] 2xl:h-[800px] px-6 mx-auto relative bg-[#b5b5b5] overflow-hidden">
-      <div className="flex w-2/3 h-full justify-end items-center my-auto text-2xl">
+    <section className="flex flex-col md:flex-row w-full h-screen md:min-h-[640px] 2xl:h-[800px] px-6 mx-auto relative bg-[#b5b5b5] overflow-hidden">
+      <div className="flex w-full md:w-2/3 h-2/3 md:h-full justify-end items-end md:items-center my-auto text-2xl">
         <div className="w-2xl min-h-[100px] bg-white rounded-3xl p-6 shadow-lg">
           <p>{displayText}</p>
         </div>
       </div>
-      <div className="flex w-1/3 h-full justify-end items-end my-auto">
+      <div className="flex w-full md:w-1/3 h-1/3 md:h-full justify-end items-end my-auto">
         <Image
           src="/assets/images/hero.png"
           alt="Hero Image"
           width={500}
           height={500}
-         /*  className="w-full h-auto object-cover" */
+          className="w-[200px] md:w-[500px] h-auto object-cover"
           priority
         />
       </div>
-      <Mouse
-        size={64}
-        color="#161616"
-        className="absolute bottom-5 left-1/2 animate-bounce"
-      />
+      <div className="hidden md:flex justify-center absolute bottom-5 left-1/2 -translate-x-1/2 animate-bounce">
+        <Mouse size={64} color="#161616" />
+      </div>
     </section>
   );
 }

@@ -5,20 +5,6 @@
   --foreground: #171717;
 }
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 @theme {
   --font-quicksand: 'Quicksand', sans-serif;
   --breakpoint-desktop: 1440px;
@@ -28,4 +14,49 @@
 
 body {
   @apply bg-[var(--background)];
+}
+
+@layer utilities {
+  @keyframes fadeInUpBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-10px); /* overshoot ke atas sedikit */
+    }
+    80% {
+      transform: translateY(5px); /* turun lagi sedikit */
+    }
+    100% {
+      transform: translateY(0); /* posisi normal */
+    }
+  }
+
+  .animate-fadeInUpBounce {
+    animation: fadeInUpBounce 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes bounce-x-left {
+    0%, 100%  { transform: translateX(5px); }
+    25%  { transform: translateX(0); }
+    50%  { transform: translateX(-5px); }
+    75% { transform: translateX(0); }
+  }
+
+  .animate-bounce-x-left {
+    animation: bounce-x-left 0.80s ease-out infinite;
+  }
+
+  @keyframes bounce-x-right {
+    0%, 100%  { transform: translateX(0); }
+    25%  { transform: translateX(5px); }
+    50%  { transform: translateX(0); }
+    75% { transform: translateX(-5px); }
+  }
+
+  .animate-bounce-x-right {
+    animation: bounce-x-right 0.80s ease-out infinite;
+  }
 }

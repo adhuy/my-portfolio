@@ -17,8 +17,9 @@ export default function Home() {
         <Navbar setOpenSidebar={setOpenSidebar} />
       </header>
       <aside
-        className={`flex flex-col md:hidden w-3/4 sm:w-1/2 h-full fixed right-0 top-0 z-20 bg-[#352d26] border-l-2 border-white rounded-l-2xl p-4 transform transition-all duration-500 ease-in-out
+        className={`flex flex-col md:hidden w-full h-full fixed right-0 top-0 z-20 justify-end items-end bg-transparent transform transition-all duration-500 ease-in-out
         ${openSidebar ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+        onClick={() => setOpenSidebar(false)}
       >
         <Sidebar setOpenSidebar={setOpenSidebar} />
       </aside>
