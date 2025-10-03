@@ -12,15 +12,20 @@ function Skills() {
     { name: "TypeScript", level: "Intermediate" },
     { name: "Git", level: "Intermediate" },
     { name: "Figma", level: "Basic" },
+    { name: "Postman", level: "Basic" },
   ];
 
   return (
     <section className="flex flex-col w-full h-[500px] mx-auto relative bg-[#bdbdbd] border-b-4 border-[#483f3b] overflow-hidden" id="skills">
       <BoxTitle title="Skill & Tools" position="right" />
-      <div className="max-w-4xl flex flex-wrap gap-4 m-auto justify-center items-center px-6">
+      <div className="flex w-fit gap-4 m-auto justify-start items-center animate-loop-logo">
       {
-        dataSkills.map((skill, index) => (
-          <div key={index} className="flex w-36 h-14 p-2 justify-center items-center bg-white rounded-full text-lg">{skill.name}</div>
+        [...dataSkills, ...dataSkills].map((skill, index) => (
+          <div key={index} className="flex bg-white rounded-full text-lg border-2 border-black">
+            <p className="w-[150px] h-[50px] p-2 justify-center items-center text-center font-semibold">
+              {skill.name}
+            </p>
+          </div>
         ))
       }
       </div>

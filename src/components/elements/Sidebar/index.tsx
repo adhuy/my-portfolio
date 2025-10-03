@@ -13,7 +13,7 @@ function Sidebar({ setOpenSidebar }: SidebarProps) {
         <li className="hover:text-gray-300 cursor-pointer" onClick={() => setOpenSidebar(false)}><Link href={'/'} >Home</Link></li>
         <li className="hover:text-gray-300 cursor-pointer" onClick={() => setOpenSidebar(false)}><Link href={'#about'}>About</Link></li>
         <li className="hover:text-gray-300 cursor-pointer" onClick={() => setOpenSidebar(false)}><Link href={'#projects'}>Project</Link></li>
-        <li className="hover:text-gray-300 cursor-pointer" onClick={() => setOpenSidebar(false)}>Contact</li>
+        <li className="hover:text-gray-300 cursor-pointer" onClick={() => setOpenSidebar(false)}><Link href={'#contact'}>Contact</Link></li>
       </ul>
 
       <PanelRightClose

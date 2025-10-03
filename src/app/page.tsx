@@ -7,6 +7,7 @@ import Hero from "@/components/hero";
 import About from "@/components/about";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
+import Contact from "@/components/contact";
 
 export default function Home() {
   const [ openSidebar, setOpenSidebar ] = useState(false);
@@ -28,7 +29,11 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <Contact />
       </main>
+      <footer className="flex w-full h-16 justify-center items-center bg-[#352d26] text-white">
+        <p>created by Yudha Merdeka</p>
+      </footer>
     </div>
   );
 }

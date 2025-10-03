@@ -17,6 +17,22 @@ body {
 }
 
 @layer utilities {
+  @keyframes loop-logo {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-loop-logo {
+    animation: loop-logo 30s cubic-bezier(1, 1, 1, 1) infinite;
+  }
+
   @keyframes fadeInUpBounce {
     0% {
       opacity: 0;
