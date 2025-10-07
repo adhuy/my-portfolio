@@ -10,13 +10,15 @@ function Skills() {
     { name: "Next.js", level: "Intermediate" },
     { name: "Tailwind CSS", level: "Intermediate" },
     { name: "TypeScript", level: "Intermediate" },
+    { name: "PHP", level: "Intermediate" },
+    { name: "MySQL", level: "Intermediate" },
     { name: "Git", level: "Intermediate" },
     { name: "Figma", level: "Basic" },
     { name: "Postman", level: "Basic" },
   ];
 
   return (
-    <section className="flex flex-col w-full h-[500px] mx-auto relative bg-[#bdbdbd] border-b-4 border-[#483f3b] overflow-hidden" id="skills">
+    <section className="flex flex-col w-full h-[300px] md:h-[500px] mx-auto relative bg-[#bdbdbd] border-b-4 border-[#483f3b] overflow-hidden" id="skills">
       <BoxTitle title="Skill & Tools" position="right" />
       <div className="flex w-fit gap-4 m-auto justify-start items-center animate-loop-logo">
       {

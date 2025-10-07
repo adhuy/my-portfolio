@@ -19,10 +19,19 @@ function Hero() {
   }, [displayText]);
   
   return (
-    <section className="flex flex-col md:flex-row w-full h-screen md:min-h-[640px] 2xl:h-[800px] px-6 mx-auto relative bg-[#b5b5b5] overflow-hidden">
-      <div className="flex w-full md:w-2/3 h-2/3 md:h-full justify-end items-end md:items-center my-auto text-2xl">
-        <div className="w-2xl min-h-[100px] bg-white rounded-3xl p-6 shadow-lg">
+    <section className="flex flex-col md:flex-row w-full h-screen md:min-h-[640px] 2xl:h-[800px] px-6 mx-auto relative bg-gradient-to-b from-[#b5b5b5] to-white overflow-hidden">
+      <div className="flex flex-col w-full md:w-2/3 h-2/3 md:h-full gap-4 justify-end md:justify-center items-end md:items-center my-auto">
+        <div className="w-full lg:w-2xl min-h-[100px] bg-white rounded-3xl p-6 shadow-lg text-2xl">
           <p>{displayText}</p>
+        </div>
+
+        <div className="w-full lg:w-2xl justify-start items-center">
+          <button
+            className="w-fit bg-[#352d26] border-2 border-white py-2 px-4 text-lg text-white rounded-full cursor-pointer hover:bg-[#483f3b] items-start hover:scale-105 transition-all duration-300"
+            onClick={() => window.open('/assets/file/CV_YudhaMP.pdf', '_blank')}
+          >
+            Download CV
+          </button>
         </div>
       </div>
       <div className="flex w-full md:w-1/3 h-1/3 md:h-full justify-end items-end my-auto">

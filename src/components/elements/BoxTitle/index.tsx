@@ -10,10 +10,10 @@ export interface BoxTitleProps {
 
 function BoxTitle({ title, position, borderColor, customeStyle }: BoxTitleProps) {
   const mode = position === "right" ? "right-title" : "left-title";
-  const justify = position === "right" ? "justify-end" : "justify-start";
+  const justify = position === "right" ? "justify-end ml-[35%] md:ml-0" : "justify-start";
 
   return (
-   <div className={["w-full h-[80px] flex items-center", justify, customeStyle].join(" ")}>
+   <div className={[style['wrapper'], justify, customeStyle].join(" ")}>
       <div
         className={style[mode]}
         style={{ "--border-color": borderColor } as React.CSSProperties}

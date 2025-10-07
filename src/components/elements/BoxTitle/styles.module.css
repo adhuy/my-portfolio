@@ -1,17 +1,24 @@
+.wrapper {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
 .left-title {
   width: 600px;
   height: 0;
-  border-right: 80px solid transparent;
-  border-top: 80px solid var(--border-color, #483f3b);
+  border-right: 40px solid transparent;
+  border-top: 40px solid var(--border-color, #483f3b);
   position: relative;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .left-title h3 {
   position: absolute;
-  top: -70px;
-  left: 40px;
-  font-size: 36px;
+  top: -42px;
+  left: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: white;
 }
@@ -19,18 +26,47 @@
 .right-title {
   width: 600px;
   height: 0;
-  border-left: 80px solid transparent;
-  border-top: 80px solid var(--border-color, #483f3b);
+  border-left: 40px solid transparent;
+  border-top: 40px solid var(--border-color, #483f3b);
   position: relative;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .right-title h3 {
   position: absolute;
-  top: -70px;
-  right: 40px;
-  font-size: 36px;
+  top: -42px;
+  right: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: white;
   text-align: right;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    width: 100%;
+    height: 80px;
+  }
+
+  .left-title {
+    border-right: 80px solid transparent;
+    border-top: 80px solid var(--border-color, #483f3b);
+  }
+
+  .right-title {
+    border-left: 80px solid transparent;
+    border-top: 80px solid var(--border-color, #483f3b);
+  }
+
+  .left-title h3 {
+    top: -70px;
+    left: 40px;
+    font-size: 36px;
+  }
+
+  .right-title h3 {
+    top: -70px;
+    right: 40px;
+    font-size: 36px;
+  }
 }

@@ -5,13 +5,13 @@ import FadeInComponent from "./elements/FadeInComponent";
 
 function About() {
   return (
-    <section className="flex flex-col justify-center items-center w-full mx-auto relative bg-[#e5e5e5] border-t-4 border-b-4 border-[#483f3b] overflow-hidden" id="about">
+    <section className="flex flex-col w-full h-full mx-auto relative bg-[#e5e5e5] border-t-4 border-b-4 border-[#483f3b] overflow-hidden" id="about">
       <BoxTitle title="About Me" position="left" />
 
       <FadeInComponent>
-        <div className="flex flex-col max-w-4xl h-full justify-center items-center my-16 text-center bg-[#fafafa] rounded-3xl p-10 shadow-lg mx-4">
+        <div className="flex flex-col max-w-4xl h-full justify-center items-center my-8 md:my-16 text-center bg-[#fafafa] rounded-3xl p-10 shadow-lg mx-4">
           <p className="text-lg">
-            I&apos;m a passionate Frontend Developer with over 3 years of experience building responsive and user-friendly web applications. My expertise lies in utilizing modern technologies like React.js, Next.js, and Tailwind CSS to create seamless user experiences. I also have experience and expertise in API integration, UI/UX collaboration, and performance optimization to ensure my projects perform smoothly.
+            A Software Developer with 5 years of experience in web application development, specializing in Front-End Development for the past 3 years. Skilled in React.js, Next.js, and Tailwind CSS, with strong attention to detail in UI/UX, performance optimization, and clean code architecture. Experienced working in cross-functional Agile/Scrum teams and passionate about building scalable, maintainable, and user-focused applications.
           </p>
           <p className="mt-6">Bachelor of Informatics Engineering from Universitas Jenderal Achmad Yani with a GPA of 3.37</p>
 
@@ -31,7 +31,7 @@ function About() {
                 width={200}
                 height={200}
                 alt="profile image"
-                className="relative w-full h-full object-contain[clip-path:inherit]"
+                className="relative w-full h-full object-contain"
               />
             </div>
           </div>

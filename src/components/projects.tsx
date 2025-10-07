@@ -1,12 +1,14 @@
 "use client"
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import BoxTitle from "./elements/BoxTitle";
 import CardSwap, { Card } from './elements/CardSwap';
 import FadeInComponent from "./elements/FadeInComponent";
 import Image from "next/image";
 import { dataProjects } from "@/mock-data";
 import { ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 function Projects () {
   const [ activeCard, setActiveCard ] = useState(dataProjects[0] || {});
@@ -23,10 +25,11 @@ function Projects () {
     setActiveCard(dataProjects[(currentSlide + 1) % slideCount]);
 
     // scroll to top of the project description
-    const section = document.getElementById("projects");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: { y: "#projects", offsetY: 0 },
+      ease: "power2.inOut",
+    });
   }, [slideCount, currentSlide]);
   
   const prevSlide = useCallback(() => {
@@ -34,11 +37,16 @@ function Projects () {
     setActiveCard(dataProjects[(currentSlide - 1 + slideCount) % slideCount]);
 
     // scroll to top of the project description
-    const section = document.getElementById("projects");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: "#projects", offsetY: 0 },
+      ease: "power2.inOut",
+    });
   }, [slideCount, currentSlide]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+  }, []);
 
   return (
     <section
@@ -49,7 +57,7 @@ function Projects () {
 
       <div className="flex flex-col lg:flex-row w-full h-full px-4 lg:px-0">
         <FadeInComponent>
-          <div className="flex flex-col w-full h-full gap-10 lg:mx-10 my-10 mt-[128px] p-6 bg-[#fafafa] rounded-2xl">
+          <div className="flex flex-col w-full h-full gap-10 lg:mx-10 my-10 mt-[80px] md:mt-[128px] p-6 bg-[#fafafa] rounded-2xl">
             <h5 className="text-4xl">{activeCard ? activeCard.title : ''}</h5>
             <p className="text-[20px]">{activeCard ? activeCard.description : ''}</p>
             <div className="w-full flex flex-wrap gap-4">
@@ -73,7 +81,7 @@ function Projects () {
             cardDistance={60}
             verticalDistance={70}
             onCardClick={(idx) => setActiveCard(dataProjects[idx])}
-            customeStyle="w-[80%] h-full lg:w-[500px] lg:h-[400px] hidden lg:block"
+            customeStyle="w-[80%] h-full lg:w-[500px] lg:h-[400px] hidden lg:block mb-10"
           >
             {dataProjects.map((project) => (
               <Card key={project.id} customClass="!w-full cursor-pointer">
@@ -98,20 +106,21 @@ function Projects () {
                 height={200}
                 className="rounded-xl object-cover"
                 style={{ width: '100%', height: 'auto' }}
+                priority
               />
 
               {/* Arrows Button */}
               <button 
-                className="absolute -left-5 bg-[#fafafa] rounded-full border-2 border-[#352d26] p-2 animate-bounce-x-left"
+                className="absolute -left-5 bg-[#352d26] rounded-full border-2 border-[#fafafa] p-2 animate-bounce-x-left"
                 onClick={prevSlide}
               >
-                <ArrowBigLeftDash color="#352d26" fill="#352d26"/>
+                <ArrowBigLeftDash color="#fafafa" fill="#fafafa"/>
               </button>
               <button 
-                className="absolute -right-5 bg-[#fafafa] rounded-full border-2 border-[#352d26] p-2 animate-bounce-x-right"
+                 className="absolute -right-5 bg-[#352d26] rounded-full border-2 border-[#fafafa] p-2 animate-bounce-x-right"
                 onClick={nextSlide}
               >
-                <ArrowBigRightDash color="#352d26" fill="#352d26"/>
+                <ArrowBigRightDash color="#fafafa" fill="#fafafa"/>
               </button>
             </div>
           </FadeInComponent>
