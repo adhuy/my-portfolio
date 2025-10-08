@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 
 function FadeInComponent({ children }: { children: React.ReactNode }) {

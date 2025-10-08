@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import BoxTitle from "../../components/elements/BoxTitle";
 import Image from "next/image";
