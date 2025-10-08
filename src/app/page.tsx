@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import Navbar from "@/components/elements/Navbar";
-import Sidebar from "@/components/elements/Sidebar";
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import Skills from "@/components/skills";
-import Projects from "@/components/projects";
-import Contact from "@/components/contact";
+import Navbar from "@/components/layout/Navbar";
+import Sidebar from "@/components/layout/Sidebar";
+import Hero from "@/app/hero/page";
+import About from "@/app/about/page";
+import Skills from "@/app/skills/page";
+import Projects from "@/app/projects/page";
+import Contact from "@/app/contact/page";
 
 export default function Home() {
   const [ openSidebar, setOpenSidebar ] = useState(false);

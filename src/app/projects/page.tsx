@@ -1,11 +1,11 @@
 "use client"
 
 import React, { useState, useCallback, useEffect } from "react";
-import BoxTitle from "./elements/BoxTitle";
-import CardSwap, { Card } from './elements/CardSwap';
-import FadeInComponent from "./elements/FadeInComponent";
+import BoxTitle from "../../components/elements/BoxTitle";
+import CardSwap, { Card } from '../../components/elements/CardSwap';
+import FadeInComponent from "../../components/animations/FadeInComponent";
 import Image from "next/image";
-import { dataProjects } from "@/mock-data";
+import { dataProjects } from "@/lib/constants";
 import { ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -57,7 +57,7 @@ function Projects () {
 
       <div className="flex flex-col lg:flex-row w-full h-full px-4 lg:px-0">
         <FadeInComponent>
-          <div className="flex flex-col w-full h-full gap-10 lg:mx-10 my-10 mt-[80px] md:mt-[128px] p-6 bg-[#fafafa] rounded-2xl">
+          <div className="flex flex-col w-full h-full gap-10 lg:mx-10 my-10 mt-[80px] md:mt-[128px] p-6 bg-white rounded-2xl">
             <h5 className="text-4xl">{activeCard ? activeCard.title : ''}</h5>
             <p className="text-[20px]">{activeCard ? activeCard.description : ''}</p>
             <div className="w-full flex flex-wrap gap-4">

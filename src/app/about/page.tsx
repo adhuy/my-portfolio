@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import BoxTitle from "@/components/elements/BoxTitle";
-import FadeInComponent from "./elements/FadeInComponent";
+import FadeInComponent from "../../components/animations/FadeInComponent";
 
 function About() {
   return (
@@ -9,7 +9,7 @@ function About() {
       <BoxTitle title="About Me" position="left" />
 
       <FadeInComponent>
-        <div className="flex flex-col max-w-4xl h-full justify-center items-center my-8 md:my-16 text-center bg-[#fafafa] rounded-3xl p-10 shadow-lg mx-4">
+        <div className="flex flex-col max-w-4xl h-full justify-center items-center my-8 md:my-16 text-center bg-white rounded-3xl p-10 shadow-lg mx-4">
           <p className="text-lg">
             A Software Developer with 5 years of experience in web application development, specializing in Front-End Development for the past 3 years. Skilled in React.js, Next.js, and Tailwind CSS, with strong attention to detail in UI/UX, performance optimization, and clean code architecture. Experienced working in cross-functional Agile/Scrum teams and passionate about building scalable, maintainable, and user-focused applications.
           </p>

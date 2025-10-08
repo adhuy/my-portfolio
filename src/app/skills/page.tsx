@@ -1,5 +1,5 @@
 import React from "react";
-import BoxTitle from "./elements/BoxTitle";
+import BoxTitle from "../../components/elements/BoxTitle";
 
 function Skills() {
   const dataSkills = [

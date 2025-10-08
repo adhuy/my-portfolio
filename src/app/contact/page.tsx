@@ -1,5 +1,5 @@
 import React from "react";
-import BoxTitle from "./elements/BoxTitle";
+import BoxTitle from "../../components/elements/BoxTitle";
 import Image from "next/image";
 
 function Contact() {
